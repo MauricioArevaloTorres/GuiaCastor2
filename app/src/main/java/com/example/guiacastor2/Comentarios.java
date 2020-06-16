@@ -11,22 +11,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.guiacastor2.ui.home.HomeFragment;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 public class Comentarios extends AppCompatActivity {
 
-    private FirebaseFirestore firebaseFirestore ;
-    private RecyclerView fstList ;
+    private FirebaseFirestore firebaseFirestore;
+    private RecyclerView fstList;
     private FirestoreRecyclerAdapter adapter;
     private TextView Tid, Tnombre, Tapellido;
     String id, Pnombre, Papellido;
+
+    private EditText Comentario;
+    private RatingBar Calificacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +54,8 @@ public class Comentarios extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         fstList = findViewById(R.id.rcv_lista);
 
-
+        Comentario = findViewById(R.id.txt_come);
+        Calificacion = findViewById(R.id.rtn_cali);
 
         id = intent.getStringExtra("Profesor");
         Pnombre = intent.getStringExtra("Nombre");
@@ -60,6 +67,8 @@ public class Comentarios extends AppCompatActivity {
         //Query
 
         Query query = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
+
+
 
         //Recycler
 
@@ -116,5 +125,18 @@ public class Comentarios extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         adapter.startListening();
+    }
+
+    public void add(View view) {
+
+        CollectionReference coment = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
+        String com = Comentario.getText().toString();
+        Float cal = Calificacion.getRating();
+
+        ComentariosModel comentariosModel = new ComentariosModel(com,cal);
+
+        coment.add(comentariosModel);
+
+
     }
 }
