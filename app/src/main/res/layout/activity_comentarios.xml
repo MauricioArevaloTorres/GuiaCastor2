@@ -59,19 +59,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_lista"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_width="350dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="1dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_come"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txt_come"
-        android:layout_width="331dp"
+        android:layout_width="350dp"
         android:layout_height="88dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="20dp"
         android:background="@color/blanco"
@@ -88,7 +90,7 @@
         android:id="@+id/rtn_cali"
         android:layout_width="246dp"
         android:layout_height="60dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
         android:theme="@style/RatingBar"
         app:layout_constraintBottom_toBottomOf="parent"
