@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/negro"
     tools:context=".Comentarios">
 
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="87dp"
         android:layout_height="26dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:text="TextView"
+        android:textColor="@color/blanco"
         app:layout_constraintEnd_toStartOf="@+id/txt_area"
+        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +24,10 @@
         android:id="@+id/txt_ape"
         android:layout_width="99dp"
         android:layout_height="27dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
+        android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 
@@ -31,7 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+
+        android:textColor="@color/blanco"
+
         app:layout_constraintBottom_toTopOf="@+id/rcv_lista"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_ape" />
@@ -40,15 +49,17 @@
         android:id="@+id/txt_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="25dp"
         android:text="TextView"
+        android:textColor="@color/blanco"
+        app:layout_constraintBottom_toTopOf="@+id/txt_id"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="150dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_lista"
         android:layout_width="409dp"
-        android:layout_height="260dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_come"
@@ -61,37 +72,54 @@
         android:layout_height="88dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/blanco"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/rtn_cali"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="489dp" />
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RatingBar
         android:id="@+id/rtn_cali"
         android:layout_width="246dp"
-        android:layout_height="51dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/blanco"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_come"
-        tools:layout_editor_absoluteX="40dp" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
+
         android:id="@+id/btn_add"
         android:layout_width="61dp"
         android:layout_height="55dp"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/naranja"
+
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rtn_cali"
-        app:layout_constraintTop_toBottomOf="@+id/txt_come" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
+
         android:id="@+id/btn_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@color/naranja"
         android:src="@drawable/ic_home_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

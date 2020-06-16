@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_weight="3"
+        android:background="@color/negro"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -20,11 +21,13 @@
         <TextView
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
-            android:text="@string/signed_out" />
+            android:text="@string/signed_out"
+            android:textColor="@color/blanco" />
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
+            android:textColor="@color/blanco"
             tools:text="Firebase User ID: 123456789abc" />
 
     </LinearLayout>
@@ -34,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/negro"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -50,7 +54,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/hint_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/azul"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/fieldPassword"
@@ -58,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/hint_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="@color/azul"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,24 +80,30 @@
 
             <Button
                 android:id="@+id/emailSignInButton"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
                 android:layout_weight="1"
+                android:background="@color/naranja"
                 android:onClick="onClick"
                 android:text="@string/sign_in"
+                android:textColor="@color/azul"
+                android:textStyle="bold"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
 
             <Button
                 android:id="@+id/emailCreateAccountButton"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
                 android:layout_weight="1"
+                android:background="@color/naranja"
                 android:onClick="onClick"
                 android:text="@string/create_account"
+                android:textColor="@color/azul"
+                android:textStyle="bold"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
         </LinearLayout>
 
