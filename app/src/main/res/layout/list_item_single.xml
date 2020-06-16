@@ -12,6 +12,8 @@
         android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:fontFamily="cursive"
         android:text="TextView"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,6 +26,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
+        android:textSize="30sp"
+        android:fontFamily="cursive"
         android:textColor="@color/blanco"
         app:layout_constraintStart_toEndOf="@+id/txt_name"
         app:layout_constraintTop_toTopOf="parent" />
