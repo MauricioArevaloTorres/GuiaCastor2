@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -34,6 +35,8 @@ public class Comentarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
 
+        getSupportActionBar().hide();
+
 
 
         setContentView(R.layout.activity_comentarios);
@@ -41,7 +44,7 @@ public class Comentarios extends AppCompatActivity {
         Tid = findViewById(R.id.txt_id);
         Tnombre = findViewById(R.id.txt_name);
         Tapellido = findViewById(R.id.txt_ape);
-        
+
         firebaseFirestore = FirebaseFirestore.getInstance();
         fstList = findViewById(R.id.rcv_lista);
 

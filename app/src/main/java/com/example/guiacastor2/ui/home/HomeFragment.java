@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         fstList = root.findViewById(R.id.rcv_lista);
 
+
         //Query
 
         Query query = firebaseFirestore.collection("Profesores");
