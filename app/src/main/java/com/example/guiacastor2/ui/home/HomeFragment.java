@@ -1,5 +1,6 @@
 package com.example.guiacastor2.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.guiacastor2.Comentarios;
 import com.example.guiacastor2.ProfesorModel;
 import com.example.guiacastor2.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -58,10 +60,19 @@ public class HomeFragment extends Fragment {
                return new ProfesorViewHolder(view);
            }
 
-           public void onBindViewHolder(ProfesorViewHolder holder, int position, ProfesorModel model) {
+           public void onBindViewHolder(ProfesorViewHolder holder, int position, final ProfesorModel model) {
                 holder.name.setText(model.getNombre());
                 holder.last.setText(model.getApellido());
                 holder.id.setText(model.getIdP());
+
+                holder.name.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity().getApplication() , Comentarios.class);
+                        intent.putExtra("Profesor", model.getIdP());
+                        startActivity(intent);
+                    }
+                });
 
            }
 
