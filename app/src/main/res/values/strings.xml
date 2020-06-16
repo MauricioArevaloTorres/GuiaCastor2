@@ -12,6 +12,8 @@
     <string name="ingnomprof">Nombre del Profesor</string>
     <string name="titulolista">Profesores</string>
     <string name="tituloagregar">Agregar Profesor</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="agregarcomen">Agregar comentario</string>
     <string name="selmat">Materia</string>
     <string name="selarea">Area</string>
     <string name="selsec">Sección</string>
