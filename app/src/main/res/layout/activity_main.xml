@@ -19,13 +19,14 @@
         app:srcCompat="@drawable/castor" />
 
     <TextView
+        android:fontFamily="cursive"
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:text="@string/bienvenida"
         android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textSize="45sp"
         android:textStyle="normal|bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

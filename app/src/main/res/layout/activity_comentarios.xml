@@ -8,6 +8,8 @@
     tools:context=".Comentarios">
 
     <TextView
+        android:textSize="30sp"
+        android:fontFamily="cursive"
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -20,6 +22,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textSize="30sp"
+        android:fontFamily="cursive"
         android:id="@+id/txt_ape"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
