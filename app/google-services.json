@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "616592525553",
+    "firebase_url": "https://guiacastor.firebaseio.com",
+    "project_id": "guiacastor",
+    "storage_bucket": "guiacastor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616592525553:android:176d74aac663a4dc594150",
+        "android_client_info": {
+          "package_name": "com.example.guiacastor2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616592525553-u3hqdc8b8hh29vgutglk13lie2l8q56t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtTlwPnhlAUzC7p12Enlhz54UvtH0NLI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616592525553-u3hqdc8b8hh29vgutglk13lie2l8q56t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
