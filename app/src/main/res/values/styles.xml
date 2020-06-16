@@ -16,6 +16,11 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <!-- Rating Bars -->
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/blanco</item>
+        <item name="colorControlActivated">@color/naranja</item>
+    </style>
     <!-- Light EditTexts -->
     <style name="ThemeOverlay.MyLightEditText" parent="ThemeOverlay.AppCompat.Dark"/>
 
