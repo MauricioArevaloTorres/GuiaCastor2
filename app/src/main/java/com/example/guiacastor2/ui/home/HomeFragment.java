@@ -70,6 +70,8 @@ public class HomeFragment extends Fragment {
                     public void onClick(View v) {
                         Intent intent = new Intent(getActivity().getApplication() , Comentarios.class);
                         intent.putExtra("Profesor", model.getIdP());
+                        intent.putExtra("Nombre",model.getNombre());
+                        intent.putExtra("Apellido",model.getApellido());
                         startActivity(intent);
                     }
                 });

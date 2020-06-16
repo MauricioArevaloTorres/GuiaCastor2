@@ -24,8 +24,8 @@ public class Comentarios extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore ;
     private RecyclerView fstList ;
     private FirestoreRecyclerAdapter adapter;
-
-    String id;
+    private TextView Tid, Tnombre, Tapellido;
+    String id, Pnombre, Papellido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,26 @@ public class Comentarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
 
+
+
         setContentView(R.layout.activity_comentarios);
+
+        Tid = findViewById(R.id.txt_id);
+        Tnombre = findViewById(R.id.txt_name);
+        Tapellido = findViewById(R.id.txt_ape);
+        
         firebaseFirestore = FirebaseFirestore.getInstance();
         fstList = findViewById(R.id.rcv_lista);
 
-        id = intent.getStringExtra("Profesor");
 
+
+        id = intent.getStringExtra("Profesor");
+        Pnombre = intent.getStringExtra("Nombre");
+        Papellido = intent.getStringExtra("Apellido");
+
+        Tid.setText(id);
+        Tapellido.setText(Papellido);
+        Tnombre.setText(Pnombre);
         //Query
 
         Query query = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
@@ -100,6 +114,4 @@ public class Comentarios extends AppCompatActivity {
         super.onStop();
         adapter.startListening();
     }
-
-
 }
