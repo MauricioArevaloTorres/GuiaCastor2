@@ -33,6 +33,7 @@ public class addFragment extends Fragment {
     private EditText name;
     private EditText last;
     private EditText idP;
+    private EditText area;
 
     private FirebaseFirestore firebaseFirestore;
 
@@ -45,20 +46,22 @@ public class addFragment extends Fragment {
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        name = root.findViewById(R.id.txt_name);
-        last = root.findViewById(R.id.txt_last);
-        idP = root.findViewById(R.id.txt_id);
+        name    = root.findViewById(R.id.txt_name);
+        last    = root.findViewById(R.id.txt_last);
+        idP     = root.findViewById(R.id.txt_id);
+        area    = root.findViewById(R.id.txt_area);
         Button button = (Button) root.findViewById(R.id.btn_save);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nom = name.getText().toString();
-                String ape = last.getText().toString();
-                String id = idP.getText().toString();
+                String nom  = name.getText().toString();
+                String ape  = last.getText().toString();
+                String id   = idP.getText().toString();
+                String ar   = area.getText().toString();
 
                 CollectionReference profesores = firebaseFirestore.collection("Profesores");
 
-                ProfesorModel profesorModel = new ProfesorModel(nom, ape, id);
+                ProfesorModel profesorModel = new ProfesorModel(nom, ape, id, ar);
 
                 profesores.document(id).set(profesorModel);
 
