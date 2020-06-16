@@ -10,13 +10,14 @@
 
     <TextView
         android:id="@+id/lbl_Agregar"
-        android:layout_width="230dp"
+        android:layout_width="300dp"
         android:layout_height="47dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="cursive"
         android:text="Añadir un profesor"
         android:textColor="@color/blanco"
-        android:textSize="30sp"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
