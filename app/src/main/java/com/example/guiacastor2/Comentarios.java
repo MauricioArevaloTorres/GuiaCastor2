@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -28,8 +29,8 @@ public class Comentarios extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView fstList;
     private FirestoreRecyclerAdapter adapter;
-    private TextView Tid, Tnombre, Tapellido;
-    String id, Pnombre, Papellido;
+    private TextView Tid, Tnombre, Tapellido, Tarea;
+    String id, Pnombre, Papellido, Parea;
 
     private EditText Comentario;
     private RatingBar Calificacion;
@@ -50,6 +51,7 @@ public class Comentarios extends AppCompatActivity {
         Tid = findViewById(R.id.txt_id);
         Tnombre = findViewById(R.id.txt_name);
         Tapellido = findViewById(R.id.txt_ape);
+        Tarea = findViewById(R.id.txt_area);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
         fstList = findViewById(R.id.rcv_lista);
@@ -60,10 +62,12 @@ public class Comentarios extends AppCompatActivity {
         id = intent.getStringExtra("Profesor");
         Pnombre = intent.getStringExtra("Nombre");
         Papellido = intent.getStringExtra("Apellido");
+        Parea = intent.getStringExtra("Area");
 
         Tid.setText(id);
         Tapellido.setText(Papellido);
         Tnombre.setText(Pnombre);
+        Tarea.setText(Parea);
         //Query
 
         Query query = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
@@ -94,6 +98,31 @@ public class Comentarios extends AppCompatActivity {
         fstList.setHasFixedSize(true);
         fstList.setLayoutManager(new LinearLayoutManager(this));
         fstList.setAdapter(adapter);
+
+        ImageButton imageButton = (ImageButton) findViewById(R.id.btn_add);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CollectionReference coment = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
+                String com = Comentario.getText().toString();
+                Float cal = Calificacion.getRating();
+
+                ComentariosModel comentariosModel = new ComentariosModel(com,cal);
+
+                coment.add(comentariosModel);
+            }
+        });
+
+        ImageButton gohome = (ImageButton) findViewById(R.id.btn_home);
+
+        gohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplication(), Principal.class);
+                startActivity(intent1);
+            }
+        });
 
 
 
@@ -127,16 +156,5 @@ public class Comentarios extends AppCompatActivity {
         adapter.startListening();
     }
 
-    public void add(View view) {
 
-        CollectionReference coment = firebaseFirestore.collection("Profesores").document(id).collection("Comentarios");
-        String com = Comentario.getText().toString();
-        Float cal = Calificacion.getRating();
-
-        ComentariosModel comentariosModel = new ComentariosModel(com,cal);
-
-        coment.add(comentariosModel);
-
-
-    }
 }

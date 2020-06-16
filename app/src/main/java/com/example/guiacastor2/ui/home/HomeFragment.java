@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment {
                         intent.putExtra("Profesor", model.getIdP());
                         intent.putExtra("Nombre",model.getNombre());
                         intent.putExtra("Apellido",model.getApellido());
+                        intent.putExtra("Area",model.getArea());
                         startActivity(intent);
                     }
                 });
